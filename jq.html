@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+
+
+ p {
+  color: red;
+  font-size: 50px;
+}
+
+#h{ color:blueviolet;
+    font-family: sans-serif; 
+    font-weight: 6000; font-size: 200px; 
+    line-height: 1.5; margin-bottom: 0;
+    text-align: center;
+}
+
+  </style>
+  
+</head>
+<body style="background-color: aqua;">
+  <h1 id="h">I am DASHH</h1>
+  <br>
+  <br>
+  <p id="p1">Hey Dhanush! I'm Dhanush, 
+    a passionate information technology student with experience in Angular and Node. 
+    I also have skills in website vulnerability checking, penetration testing, data analytics,and data science. 
+    Excited to connect and collaborate with professionals in the tech industry! 🚀
+</p>
+
+<script>
+    $(document).ready(function() {
+      $("#p1").click(function() {
+        $(this).hide();
+      });
+    });
+
+    $(document).ready(function() {
+      $("#h").mouseover(function() {
+        $(this).css({
+  color: "green",
+  fontSize: "100px"
+});
+      });
+    });
+
+    $(document).ready(function() {
+      $("#h").mouseout(function() {
+        $(this).css({
+  color: "blueviolet",
+  fontSize: "100px"
+});
+      });
+    });
+ $(document).ready(function() {
+      $("#p1").mouseout(function() {
+        $(this).css({
+  color: "magenta",
+});
+      });
+    });
+    $(document).ready(function() {
+      $("#p1").mouseover(function() {
+        $(this).css({
+  color: "brown",
+});
+      });
+    });
+  </script>
+</body>
+</html>
