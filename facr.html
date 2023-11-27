@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <h2>PHP Factorial Calculator</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="number">Enter a number:</label>
+        <input type="number" name="number" required>
+
+        <input type="submit" value="Calculate Factorial">
+    </form>
+
+  
+
+    <?php
+    function calculateFactorial($n) {
+        if ($n == 0 || $n == 1) {
+            return 1;
+        } else {
+            return $n * calculateFactorial($n - 1);
+        }
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Collect form input
+        $number = $_POST["number"];
+
+        // Validate that the number is a non-negative integer
+        if (filter_var($number, FILTER_VALIDATE_INT) && $number >= 0) {
+            // Calculate factorial
+            $result = calculateFactorial($number);
+
+            // Display result
+            echo "<p><strong>Factorial:</strong> $result</p>";
+        } else {
+            echo "<p>Please enter a non-negative integer.</p>";
+        }
+    }
+    ?>
+
+</div>
+
+</body>
+</html>

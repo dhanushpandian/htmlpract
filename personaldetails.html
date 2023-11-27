@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            color: #4285F4;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            text-align: left;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4285F4;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Personal Data Form</h2>
+
+<form action="submit.php" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label>
+
+    <label for="birthdate">Date of Birth:</label>
+    <input type="date" id="birthdate" name="birthdate" required>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country" required>
+        <option value="usa">United States</option>
+        <option value="canada">Canada</option>
+        <option value="uk">United Kingdom</option>
+        <!-- Add more countries as needed -->
+    </select>
+
+    <label for="interests">Interests:</label>
+    <input type="checkbox" id="reading" name="interests[]" value="reading">
+    <label for="reading">Reading</label>
+    <input type="checkbox" id="traveling" name="interests[]" value="traveling">
+    <label for="traveling">Traveling</label>
+    <input type="checkbox" id="music" name="interests[]" value="music">
+    <label for="music">Music</label>
+
+    <label for="bio">Short Bio:</label>
+    <textarea id="bio" name="bio" rows="4"></textarea>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
